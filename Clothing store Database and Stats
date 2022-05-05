@@ -1,0 +1,26 @@
+CREATE TABLE Clothing_store (id INTEGER PRIMARY KEY, price INTEGER, items TEXT, amount INTEGER, color TEXT);
+
+INSERT INTO Clothing_store VALUES (1, 5, "tshirt", 100, "blue");
+INSERT INTO Clothing_store VALUES (2, 5, "tshirt", 100, "yellow");
+INSERT INTO Clothing_store VALUES (3, 5, "tshirt", 100, "red");
+INSERT INTO Clothing_store VALUES (4, 5, "tshirt", 100, "purple");
+INSERT INTO Clothing_store VALUES (5, 5, "tshirt", 50, "green");
+
+
+INSERT INTO Clothing_store VALUES (6, 5, "dress", 50, "blue");
+INSERT INTO Clothing_store VALUES (7, 5, "dress", 50, "yellow");
+INSERT INTO Clothing_store VALUES (8, 5, "dress", 50, "red");
+INSERT INTO Clothing_store VALUES (9, 5, "dress", 50, "purple");
+INSERT INTO Clothing_store VALUES (10, 5, "dress", 50, "green");
+
+
+INSERT INTO Clothing_store VALUES (11, 6.75, "pants", 75, "blue");
+INSERT INTO Clothing_store VALUES (12, 6.75, "pants", 75, "yellow");
+INSERT INTO Clothing_store VALUES (13, 6.75, "pants", 75, "red");
+INSERT INTO Clothing_store VALUES (14, 6.75, "pants", 75, "purple");
+INSERT INTO Clothing_store VALUES (15, 6.75, "pants", 75, "green");
+
+
+SELECT * FROM Clothing_store ORDER BY price;
+
+SELECT MAX(price) FROM Clothing_store;
