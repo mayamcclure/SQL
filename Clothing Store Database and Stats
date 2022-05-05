@@ -1,26 +1,43 @@
-CREATE TABLE Clothing_store (id INTEGER PRIMARY KEY, price INTEGER, items TEXT, amount INTEGER, color TEXT);
+CREATE TABLE Clothing_items (id INTEGER PRIMARY KEY, items TEXT, price INTEGER);
 
-INSERT INTO Clothing_store VALUES (1, 5, "tshirt", 100, "blue");
-INSERT INTO Clothing_store VALUES (2, 5, "tshirt", 100, "yellow");
-INSERT INTO Clothing_store VALUES (3, 5, "tshirt", 100, "red");
-INSERT INTO Clothing_store VALUES (4, 5, "tshirt", 100, "purple");
-INSERT INTO Clothing_store VALUES (5, 5, "tshirt", 50, "green");
+INSERT INTO Clothing_items VALUES (1,"Tshirt", 15);
+INSERT INTO Clothing_items VALUES (2,"Slacks", 23);
+INSERT INTO Clothing_items VALUES (3,"Jeans", 35);
+INSERT INTO Clothing_items VALUES (4,"Shorts", 22);
+INSERT INTO Clothing_items VALUES (5,"Cardigan",28 );
+INSERT INTO Clothing_items VALUES (6 ,"Coat", 55);
+INSERT INTO Clothing_items VALUES (7,"Tank", 15);
+INSERT INTO Clothing_items VALUES (8,"Skirt", 25);
+INSERT INTO Clothing_items VALUES (9,"Zipup_jacket", 30);
+INSERT INTO Clothing_items VALUES (10,"Vest", 30);
+INSERT INTO Clothing_items VALUES (11,"Scarf", 15);
+INSERT INTO Clothing_items VALUES (12,"Belt", 15);
+INSERT INTO Clothing_items VALUES (13,"Purse", 20);
+INSERT INTO Clothing_items VALUES (14,"Cap", 15);
+INSERT INTO Clothing_items VALUES (15,"Hoodie", 37);
 
+SELECT * FROM Clothing_items ORDER BY price DESC;
 
-INSERT INTO Clothing_store VALUES (6, 5, "dress", 50, "blue");
-INSERT INTO Clothing_store VALUES (7, 5, "dress", 50, "yellow");
-INSERT INTO Clothing_store VALUES (8, 5, "dress", 50, "red");
-INSERT INTO Clothing_store VALUES (9, 5, "dress", 50, "purple");
-INSERT INTO Clothing_store VALUES (10, 5, "dress", 50, "green");
+CREATE TABLE Store_Data 
+(id INTEGER PRIMARY KEY,
+Week INTEGER, 
+Footfall INTEGER, 
+Purchases INTEGER, 
+Average_basket_size INTEGER, 
+Average_ticket_size INTEGER);
 
+INSERT INTO Store_Data VALUES (1,1, 33, 27, 2.2, 58);
+INSERT INTO Store_Data VALUES (2,2, 23, 19, 1.7, 51);
+INSERT INTO Store_Data VALUES (3,3, 12, 5, 1.4, 32);
+INSERT INTO Store_Data VALUES (4,4, 47, 21, 1.7, 54);
+INSERT INTO Store_Data VALUES (5,5, 52, 27, 1.5, 42);
 
-INSERT INTO Clothing_store VALUES (11, 6.75, "pants", 75, "blue");
-INSERT INTO Clothing_store VALUES (12, 6.75, "pants", 75, "yellow");
-INSERT INTO Clothing_store VALUES (13, 6.75, "pants", 75, "red");
-INSERT INTO Clothing_store VALUES (14, 6.75, "pants", 75, "purple");
-INSERT INTO Clothing_store VALUES (15, 6.75, "pants", 75, "green");
+SELECT week, Average_ticket_size FROM Store_Data ORDER BY Average_ticket_size DESC;
 
-
-SELECT * FROM Clothing_store ORDER BY price;
-
-SELECT MAX(price) FROM Clothing_store;
+/* How many people came into the store in total? */
+SELECT SUM(footfall) AS total_footfall_YTD
+    FROM Store_Data;
+    
+ /* How many purchases were made in total? */   
+SELECT SUM(purchases) AS total_purchases_YTD
+    FROM Store_Data;
